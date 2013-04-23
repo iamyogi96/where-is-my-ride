@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./PrincipalTemplate.xhtml">
+
+            <ui:define name="top">
+                WELCOME TO WHERE'S MY RIDE???
+            </ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="usuario;"/>
+                        <h:inputText value="#{loginBean.user}"/>
+                        <h:outputLabel value="Contrasenia;"/>
+                        <h:inputSecret value="#{loginBean.pass}"/>
+                    </h:panelGrid>
+                    <h:commandButton value="Aceptar" action="#{loginBean.acceso}"/>
+
+
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <center>
+                        <h1> <h:graphicImage value="/Users/lesly/Desktop" width="300" height="400"  /></h1>
+                        <h1> <h:commandButton action="UsuarioCrearEditar" value="Registrar nuevo Usuario"/></h1>
+                    </center>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
