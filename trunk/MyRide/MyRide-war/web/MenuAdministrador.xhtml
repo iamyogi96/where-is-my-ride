@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./PrincipalTemplate.xhtml">
+
+            <ui:define name="top">
+                Administrador
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+
+            <ui:define name="content">
+                <h:form>
+                    <h1>  <h:commandLink action="ListaRutas" value="Rutas"/></h1>
+                    <h1>  <h:commandLink action="ListaPuntos" value="Puntos"/></h1>
+                    <h1><h:commandLink action="ListaTransportes" value="Transportes"/></h1>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
