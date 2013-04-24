@@ -2,9 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
-
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
     <body>
+        
+
 
         <ui:composition template="./PrincipalTemplate.xhtml">
 
@@ -20,16 +24,18 @@
                         <h:outputLabel value="Contrasenia;"/>
                         <h:inputSecret value="#{loginBean.pass}"/>
                     </h:panelGrid>
-                    <h:commandButton value="Aceptar" action="#{loginBean.acceso}"/>
-
-
+                    <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false"/>
+                    <p:commandButton value="Mapa" action="MapaMobil" ajax="false"/>
+                   
                 </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <h:form>
+                     <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
+
                     <center>
-                        <h1> <h:graphicImage value="/Users/lesly/Desktop" width="300" height="400"  /></h1>
+                        <h1> <h:graphicImage value="/img/loogo.jpg  " width="300" height="400"  /></h1>
                         <h1> <h:commandButton action="UsuarioCrearEditar" value="Registrar nuevo Usuario"/></h1>
                     </center>
                 </h:form>
