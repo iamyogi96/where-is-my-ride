@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
 
     <body>
 
@@ -16,7 +18,38 @@
             </ui:define>
 
             <ui:define name="content">
-                content
+               
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="View"/></h1>
+                        <h:panelGrid columns="2">
+                           
+                            <h:outputText value="Nombre:"/>
+                            <h:outputText value="#{usuarioBean.usuario.nombre}" title="Nombre"/>
+                            <h:outputText value="Apaterno:"/>
+                            <h:outputText value="#{usuarioBean.usuario.apaterno}" title="Apaterno"/>
+                            <h:outputText value="Amaterno:"/>
+                            <h:outputText value="#{usuarioBean.usuario.amaterno}" title="Amaterno"/>
+                            <h:outputText value="Correo:"/>
+                            <h:outputText value="#{usuarioBean.usuario.correo}" title="Correo"/>
+                            <h:outputText value="Direccion:"/>
+                            <h:outputText value="#{usuarioBean.usuario.direccion}" title="Direccion"/>
+                            <h:outputText value="Ciudad:"/>
+                            <h:outputText value="#{usuarioBean.usuario.ciudad}" title="Ciudad"/>
+                            <h:outputText value="Contrasena:"/>
+                            <h:outputText value="#{usuarioBean.usuario.contrasena}" title="Contrasena"/>
+                            <h:outputText value="Telefono:"/>
+                            <h:outputText value="#{usuarioBean.usuario.telefono}" title="Telefono"/>
+                            
+                            <h:commandButton value="Aceptar" action="#{usuarioBean.procesarAccion}"/>
+                            
+                            <h:commandButton value="Cancelar" action="UsuarioCrearEditar" immediate="true"/>
+                            
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+
+                
             </ui:define>
 
         </ui:composition>

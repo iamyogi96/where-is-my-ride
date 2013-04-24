@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./PrincipalTemplate.xhtml">
+
+            <ui:define name="top">
+                Lista de Usuarios
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                <h1>Lista de usuarios</h1><br/>
+                <f:view>
+                    <h:form>
+
+                        <h:commandButton value="Registrar Usuario" action="UsuarioCrearEditar" actionListener="#{usuarioBean.prepararNuevoRegistro}"/>
+
+                        <h1><h:outputText value="List"/></h1>
+                        <h:dataTable value="#{usuarioBean.lista}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nombre"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nombre}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Apaterno"/>
+                                </f:facet>
+                                <h:outputText value="#{item.apaterno}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Amaterno"/>
+                                </f:facet>
+                                <h:outputText value="#{item.amaterno}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Correo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.correo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Direccion"/>
+                                </f:facet>
+                                <h:outputText value="#{item.direccion}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Ciudad"/>
+                                </f:facet>
+                                <h:outputText value="#{item.ciudad}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Contrasena"/>
+                                </f:facet>
+                                <h:outputText value="#{item.contrasena}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Telefono"/>
+                                </f:facet>
+                                <h:outputText value="#{item.telefono}"/>
+
+
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Editar"/>
+                                    </f:facet>
+                                    <h:commandButton value="Editar" action="UsuarioCrearEditar" actionListener="#{usuarioBean.prepararEditar}"/>
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Eliminar"/>
+                                    </f:facet>
+                                    <h:commandButton value="Eliminar" action="UsuarioConfirmar" actionListener="#{usuarioBean.prepararEliminar}"/>
+                                </h:column>
+
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -17,21 +17,21 @@
             </ui:define>
 
             <ui:define name="left">
-                <h:form>
-                    <h:panelGrid columns="2">
-                        <h:outputLabel value="usuario;"/>
-                        <h:inputText value="#{loginBean.user}"/>
-                        <h:outputLabel value="Contrasenia;"/>
-                        <h:inputSecret value="#{loginBean.pass}"/>
-                    </h:panelGrid>
-                    <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false"/>
-                    <p:commandButton value="Mapa" action="MapaMobil" ajax="false"/>
-                   
-                </h:form>
+               
             </ui:define>
 
             <ui:define name="content">
                 <h:form>
+                    
+                     <h:panelGrid columns="2">
+                        <h:outputLabel value="usuario:"/>
+                        <h:inputText value="#{loginBean.user}"/>
+                        <h:outputLabel value="Contrasenia:"/>
+                        <h:inputSecret value="#{loginBean.pass}"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false"/>
+                    <p:commandButton value="Mapa" action="MapaMobil" ajax="false"/>
+                    
                      <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
 
                     <center>
