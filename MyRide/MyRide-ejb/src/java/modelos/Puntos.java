@@ -133,7 +133,7 @@ public class Puntos implements Serializable {
 
     @Override
     public String toString() {
-        return "modelos.Puntos[ id=" + id + " ]";
+        return id+"";
     }
     
 }

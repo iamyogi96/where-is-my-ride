@@ -203,7 +203,7 @@ public class Ruta implements Serializable {
 
     @Override
     public String toString() {
-        return "modelos.Ruta[ id=" + id + " ]";
+        return id+"";
     }
     
 }
