@@ -18,10 +18,11 @@
             </ui:define>
 
             <ui:define name="content">
-                content<f:view>
+                <f:view>
                     <h:form>
                         <h1><h:outputText value="Create/Edit"/></h1>
                         <h:panelGrid columns="2">
+                            
                             <h:outputLabel value="NoPunto:" for="noPunto" />
                             <h:inputText id="noPunto" value="#{puntosBean.puntos.noPunto}" title="NoPunto" required="true" requiredMessage="The NoPunto field is required."/>
                             <h:outputLabel value="Longitud:" for="longitud" />
@@ -29,15 +30,16 @@
                             <h:outputLabel value="Latitud:" for="latitud" />
                             <h:inputText id="latitud" value="#{puntosBean.puntos.latitud}" title="Latitud" required="true" requiredMessage="The Latitud field is required."/>
                             <h:outputLabel value="IdRuta:" for="idRuta" />
-                            <h:selectOneMenu id="idRuta" value="#{puntosBean.puntos.idRuta}" title="IdRuta" required="true" requiredMessage="The IdRuta field is required.">
+                           <h:selectOneMenu id="idRuta" value="#{puntosBean.puntos.idRuta}" title="IdRuta" required="true" requiredMessage="The IdRuta field is required.">
                                 <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                                <f:selectItems value="#{puntosBean.listaRuta}"/>
                             </h:selectOneMenu>
                         </h:panelGrid>
-                        <h:commandButton action="PuntosConfirmar" value="Aceptar"/>
+                    <h:commandButton action="PuntosConfirmar" value="Aceptar"/>
                         <h:commandButton action="ListaPuntos" immediate="true" value="Cancelar"/>
                     </h:form>
                 </f:view>
+
 
             </ui:define>
 
