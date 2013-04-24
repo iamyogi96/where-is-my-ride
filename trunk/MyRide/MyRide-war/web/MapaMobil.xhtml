@@ -4,21 +4,21 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:pm="http://primefaces.org/mobile"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      renderKitId="PRIMEFACES_MOBILE">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <f:view>
+        <f:view renderKitId="PRIMEFACES_MOBILE">
             <pm:page title="Menu">
-                <pm:header title="Menu"/>
+                <pm:header title="Menu" swatch="b"/>
                 <pm:content>
                     
                     <script src="http://maps.google.com/maps/api/js?sensor=true"
         type="text/javascript"></script>
-                        <p:gmap center="41.381542, 2.122893" zoom="15" type="hybrid"
-                                style="width:600px;height:400px" />
-                    
+                    <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
+
                 </pm:content>
             </pm:page>
         </f:view>
