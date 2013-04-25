@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
@@ -19,31 +20,39 @@
 
             <ui:define name="content">
                 <f:view>
-                    <h:form>
-                        <h1><h:outputText value="Create/Edit"/></h1>
+                    <h:form id="form">
+
+                        <h1><h:outputText value="Crear y Editar"/></h1>
+
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Nombre:" for="nombre" />
-                            <h:inputText id="nombre" value="#{usuarioBean.usuario.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                            <p:inputText id="nombre" value="#{usuarioBean.usuario.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
                             <h:outputLabel value="Apaterno:" for="apaterno" />
-                            <h:inputText id="apaterno" value="#{usuarioBean.usuario.apaterno}" title="Apaterno" required="true" requiredMessage="The Apaterno field is required."/>
+                            <p:inputText id="apaterno" value="#{usuarioBean.usuario.apaterno}" title="Apaterno" required="true" requiredMessage="The Apaterno field is required."/>
                             <h:outputLabel value="Amaterno:" for="amaterno" />
-                            <h:inputText id="amaterno" value="#{usuarioBean.usuario.amaterno}" title="Amaterno" required="true" requiredMessage="The Amaterno field is required."/>
+                            <p:inputText id="amaterno" value="#{usuarioBean.usuario.amaterno}" title="Amaterno" required="true" requiredMessage="The Amaterno field is required."/>
                             <h:outputLabel value="Correo:" for="correo" />
-                            <h:inputText id="correo" value="#{usuarioBean.usuario.correo}" title="Correo" required="true" requiredMessage="The Correo field is required."/>
+                            <p:inputText id="correo" value="#{usuarioBean.usuario.correo}" title="Correo" required="true" requiredMessage="The Correo field is required."/>
                             <h:outputLabel value="Direccion:" for="direccion" />
-                            <h:inputText id="direccion" value="#{usuarioBean.usuario.direccion}" title="Direccion" required="true" requiredMessage="The Direccion field is required."/>
+                            <p:inputText id="direccion" value="#{usuarioBean.usuario.direccion}" title="Direccion" required="true" requiredMessage="The Direccion field is required."/>
                             <h:outputLabel value="Ciudad:" for="ciudad" />
-                            <h:inputText id="ciudad" value="#{usuarioBean.usuario.ciudad}" title="Ciudad" required="true" requiredMessage="The Ciudad field is required."/>
-                            <h:outputLabel value="Contrasena:" for="contrasena" />
-                            <h:inputText id="contrasena" value="#{usuarioBean.usuario.contrasena}" title="Contrasena" required="true" requiredMessage="The Contrasena field is required."/>
+                            <p:inputText id="ciudad" value="#{usuarioBean.usuario.ciudad}" title="Ciudad" required="true" requiredMessage="The Ciudad field is required."/>
+
+                            <h:outputText value="Feedback: " />  
+                            <p:password id="feedback" value="#{contrasenaBean.password1}" feedback="true"/>  
+
+
+                            <h:outputText value="Contrasena:" for="contrasena" />
+                            <p:password id="contrasena" value="#{contrasenaBean.password1}" contrasena="true" title="Contrasena" required="true" requiredMessage="The Contrasena field is required."/>
                             <h:outputLabel value="Telefono:" for="telefono" />
-                            <h:inputText id="telefono" value="#{usuarioBean.usuario.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
+                            <p:inputText id="telefono" value="#{usuarioBean.usuario.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
 
                             <h:commandButton value="Aceptar" action="UsuarioConfirmar"/>
 
                             <h:commandButton value="Cancelar" action="UsuarioLista" immediate="true"/>
 
                         </h:panelGrid>
+
                     </h:form>
                 </f:view>
 
