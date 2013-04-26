@@ -9,6 +9,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 import modelos.Puntos;
 import modelos.Ruta;
 
@@ -27,6 +28,7 @@ public class PuntosBean {
     private List<Puntos> listaPunto;
     private List<Ruta> listaRuta;
     private Puntos puntos;
+    private String accion;
 
     public Puntos getPuntos() {
         return puntos;
@@ -52,12 +54,44 @@ public class PuntosBean {
     public PuntosBean() {
         puntos=new Puntos();
     }
-    
-    
-    public String crear(){
+    public String processarAccion(){
+    if(accion.equalsIgnoreCase("Nuevo")){
     puntosBl.registrar(puntos);
-    return "ListaPuntos";
+    }else{
+    if(accion.equalsIgnoreCase("Editar")){
+    puntosBl.modificar(puntos);
+    }else{
+    if(accion.equalsIgnoreCase("Eliminar")){
+    puntosBl.eliminar(puntos);
     }
+    }
+    }
+    accion=" ";
+    return "PuntosLista";
+    }
+    
+    public void prepararNuevo(){
+    accion="Nuevo";
+    puntos=new Puntos();
+    }
+    
+    public void prepararEditar(ActionEvent evnt){
+    accion="Editar";
+    int index=Integer.parseInt(evnt.getComponent().getClientId().split(":")[2]);
+    puntos=listaPunto.get(index);
+    }
+    
+    public void prepararEliminar(ActionEvent evnt){
+    accion="Eliminar";
+    int index=Integer.parseInt(evnt.getComponent().getClientId().split(":")[2]);
+    puntos=listaPunto.get(index);
+    }
+
+    
+//    public String crear(){
+//    puntosBl.registrar(puntos);
+//    return "ListaPuntos";
+//    }
     
     
 }
