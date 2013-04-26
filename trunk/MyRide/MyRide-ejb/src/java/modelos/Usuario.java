@@ -23,19 +23,19 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author snake_gt
  */
 @Entity
-@Table(name = "usuario")
+@Table(name = "Usuario")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
     @NamedQuery(name = "Usuario.findById", query = "SELECT u FROM Usuario u WHERE u.id = :id"),
     @NamedQuery(name = "Usuario.findByNombre", query = "SELECT u FROM Usuario u WHERE u.nombre = :nombre"),
-    @NamedQuery(name = "Usuario.findByApellidoPaterno", query = "SELECT u FROM Usuario u WHERE u.apellidoPaterno = :apellidoPaterno"),
-    @NamedQuery(name = "Usuario.findByApellidoMaterno", query = "SELECT u FROM Usuario u WHERE u.apellidoMaterno = :apellidoMaterno"),
-    @NamedQuery(name = "Usuario.findByClave", query = "SELECT u FROM Usuario u WHERE u.clave = :clave"),
-    @NamedQuery(name = "Usuario.findByTelefono", query = "SELECT u FROM Usuario u WHERE u.telefono = :telefono"),
+    @NamedQuery(name = "Usuario.findByApaterno", query = "SELECT u FROM Usuario u WHERE u.apaterno = :apaterno"),
+    @NamedQuery(name = "Usuario.findByAmaterno", query = "SELECT u FROM Usuario u WHERE u.amaterno = :amaterno"),
+    @NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo"),
     @NamedQuery(name = "Usuario.findByDireccion", query = "SELECT u FROM Usuario u WHERE u.direccion = :direccion"),
     @NamedQuery(name = "Usuario.findByCiudad", query = "SELECT u FROM Usuario u WHERE u.ciudad = :ciudad"),
-    @NamedQuery(name = "Usuario.findByEstado", query = "SELECT u FROM Usuario u WHERE u.estado = :estado")})
+    @NamedQuery(name = "Usuario.findByContrasena", query = "SELECT u FROM Usuario u WHERE u.contrasena = :contrasena"),
+    @NamedQuery(name = "Usuario.findByTelefono", query = "SELECT u FROM Usuario u WHERE u.telefono = :telefono")})
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -51,22 +51,21 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
-    @Column(name = "apellidoPaterno")
-    private String apellidoPaterno;
-    @Size(max = 45)
-    @Column(name = "apellidoMaterno")
-    private String apellidoMaterno;
+    @Column(name = "apaterno")
+    private String apaterno;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
-    @Column(name = "clave")
-    private String clave;
-    @Size(max = 15)
-    @Column(name = "telefono")
-    private String telefono;
+    @Column(name = "amaterno")
+    private String amaterno;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 1, max = 45)
+    @Column(name = "correo")
+    private String correo;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
     @Column(name = "direccion")
     private String direccion;
     @Basic(optional = false)
@@ -76,8 +75,14 @@ public class Usuario implements Serializable {
     private String ciudad;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "estado")
-    private int estado;
+    @Size(min = 1, max = 45)
+    @Column(name = "contrasena")
+    private String contrasena;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 15)
+    @Column(name = "telefono")
+    private String telefono;
 
     public Usuario() {
     }
@@ -86,14 +91,16 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    public Usuario(Integer id, String nombre, String apellidoPaterno, String clave, String direccion, String ciudad, int estado) {
+    public Usuario(Integer id, String nombre, String apaterno, String amaterno, String correo, String direccion, String ciudad, String contrasena, String telefono) {
         this.id = id;
         this.nombre = nombre;
-        this.apellidoPaterno = apellidoPaterno;
-        this.clave = clave;
+        this.apaterno = apaterno;
+        this.amaterno = amaterno;
+        this.correo = correo;
         this.direccion = direccion;
         this.ciudad = ciudad;
-        this.estado = estado;
+        this.contrasena = contrasena;
+        this.telefono = telefono;
     }
 
     public Integer getId() {
@@ -112,36 +119,28 @@ public class Usuario implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getApellidoPaterno() {
-        return apellidoPaterno;
+    public String getApaterno() {
+        return apaterno;
     }
 
-    public void setApellidoPaterno(String apellidoPaterno) {
-        this.apellidoPaterno = apellidoPaterno;
+    public void setApaterno(String apaterno) {
+        this.apaterno = apaterno;
     }
 
-    public String getApellidoMaterno() {
-        return apellidoMaterno;
+    public String getAmaterno() {
+        return amaterno;
     }
 
-    public void setApellidoMaterno(String apellidoMaterno) {
-        this.apellidoMaterno = apellidoMaterno;
+    public void setAmaterno(String amaterno) {
+        this.amaterno = amaterno;
     }
 
-    public String getClave() {
-        return clave;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getDireccion() {
@@ -160,12 +159,20 @@ public class Usuario implements Serializable {
         this.ciudad = ciudad;
     }
 
-    public int getEstado() {
-        return estado;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     @Override
