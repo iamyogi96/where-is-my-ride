@@ -38,27 +38,21 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="ApellidoPaterno"/>
+                                    <h:outputText value="Apaterno"/>
                                 </f:facet>
-                                <h:outputText value="#{item.apellidoPaterno}"/>
+                                <h:outputText value="#{item.apaterno}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="ApellidoMaterno"/>
+                                    <h:outputText value="Amaterno"/>
                                 </f:facet>
-                                <h:outputText value="#{item.apellidoMaterno}"/>
+                                <h:outputText value="#{item.amaterno}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Clave"/>
+                                    <h:outputText value="Correo"/>
                                 </f:facet>
-                                <h:outputText value="#{item.clave}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Telefono"/>
-                                </f:facet>
-                                <h:outputText value="#{item.telefono}"/>
+                                <h:outputText value="#{item.correo}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
@@ -74,13 +68,20 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Estado"/>
+                                    <h:outputText value="Contrasena"/>
                                 </f:facet>
-                                <h:outputText value="#{item.estado}"/>
+                                <h:outputText value="#{item.contrasena}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="Eliminar"/>
+                                    <h:outputText value="Telefono"/>
+                                </f:facet>
+                                <h:outputText value="#{item.telefono}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Modificar"/>
                                 </f:facet>
                                 <h:commandButton action="UsuarioCrearEditar" value="Editar" actionListener="#{usuarioBean.prepararEditar}"/>
                             </h:column>
@@ -94,6 +95,7 @@
                         <h:commandButton action="UsuarioCrearEditar" value="Nuevo Usuario" actionListener="#{usuarioBean.prepararNuevoRegistro}"/>
                     </h:form>
                 </f:view>
+
 
 
             </ui:define>
