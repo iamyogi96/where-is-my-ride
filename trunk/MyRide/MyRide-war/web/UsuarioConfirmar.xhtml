@@ -7,7 +7,7 @@
 
     <body>
 
-        <ui:composition template="./PrincipalTemplate.xhtml">
+        <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
                 top
@@ -18,38 +18,32 @@
             </ui:define>
 
             <ui:define name="content">
-               
                 <f:view>
                     <h:form>
                         <h1><h:outputText value="View"/></h1>
                         <h:panelGrid columns="2">
-                           
                             <h:outputText value="Nombre:"/>
                             <h:outputText value="#{usuarioBean.usuario.nombre}" title="Nombre"/>
-                            <h:outputText value="Apaterno:"/>
-                            <h:outputText value="#{usuarioBean.usuario.apaterno}" title="Apaterno"/>
-                            <h:outputText value="Amaterno:"/>
-                            <h:outputText value="#{usuarioBean.usuario.amaterno}" title="Amaterno"/>
-                            <h:outputText value="Correo:"/>
-                            <h:outputText value="#{usuarioBean.usuario.correo}" title="Correo"/>
+                            <h:outputText value="ApellidoPaterno:"/>
+                            <h:outputText value="#{usuarioBean.usuario.apellidoPaterno}" title="ApellidoPaterno"/>
+                            <h:outputText value="ApellidoMaterno:"/>
+                            <h:outputText value="#{usuarioBean.usuario.apellidoMaterno}" title="ApellidoMaterno"/>
+                            <h:outputText value="Clave:"/>
+                            <h:outputText value="#{usuarioBean.usuario.clave}" title="Clave"/>
+                            <h:outputText value="Telefono:"/>
+                            <h:outputText value="#{usuarioBean.usuario.telefono}" title="Telefono"/>
                             <h:outputText value="Direccion:"/>
                             <h:outputText value="#{usuarioBean.usuario.direccion}" title="Direccion"/>
                             <h:outputText value="Ciudad:"/>
                             <h:outputText value="#{usuarioBean.usuario.ciudad}" title="Ciudad"/>
-                            <h:outputText value="Contrasena:"/>
-                            <h:outputText value="#{usuarioBean.usuario.contrasena}" title="Contrasena"/>
-                            <h:outputText value="Telefono:"/>
-                            <h:outputText value="#{usuarioBean.usuario.telefono}" title="Telefono"/>
-                            
-                            <h:commandButton value="Aceptar" action="#{usuarioBean.procesarAccion}"/>
-                            
-                            <h:commandButton value="Cancelar" action="UsuarioCrearEditar" immediate="true"/>
-                            
+                            <h:outputText value="Estado:"/>
+                            <h:outputText value="#{usuarioBean.usuario.estado}" title="Estado"/>
+                            <h:commandButton action="#{usuarioBean.procesarAccion()}" value="Aceptar"/>
+                            <h:commandButton action="#{usuarioBean.procesarRegresar()}" value="Cancelar"/>
                         </h:panelGrid>
                     </h:form>
                 </f:view>
 
-                
             </ui:define>
 
         </ui:composition>
