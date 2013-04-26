@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./TemplatePrincipal.xhtml">
+
+            <ui:define name="top">
+                CONFIRMAR
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="View"/></h1>
+                        <h:panelGrid columns="2">
+                           <h:outputText value="NoPunto:"/>
+                            <h:outputText value="#{puntosBean.puntos.noPunto}" title="NoPunto"/>
+                            <h:outputText value="Longitud:"/>
+                            <h:outputText value="#{puntosBean.puntos.longitud}" title="Longitud"/>
+                            <h:outputText value="Latitud:"/>
+                            <h:outputText value="#{puntosBean.puntos.latitud}" title="Latitud"/>
+                            <h:outputText value="IdRuta:"/>
+                            <h:outputText value="#{puntosBean.puntos.idRuta}" title="IdRuta"/>
+                        </h:panelGrid>
+                         <h:commandButton action="PuntosCrearEditar" immediate="true" value="Cancelar"/>
+                        <h:commandButton action="#{puntosBean.crear}" value="Confirmar"/>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
