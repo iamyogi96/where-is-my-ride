@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
-        <ui:composition template="./PrincipalTemplate.xhtml">
+        <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                A,B,C de los Transportes
+                top
             </ui:define>
 
             <ui:define name="left">
@@ -16,7 +19,63 @@
             </ui:define>
 
             <ui:define name="content">
-                content
+                <f:view>
+                    <h:form>
+                        <p:commandButton action="TransportesCrearEditar" value="Nuevo Transporte" actionListener="#{transportesBean.prepararNuevo}" ajax="false"/>
+                        <h1><h:outputText value="List"/></h1>
+                        <p:dataTable value="#{transportesBean.lista}" var="item">
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NumEconomico"/>
+                                </f:facet>
+                                <h:outputText value="#{item.numEconomico}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="TipoTrans"/>
+                                </f:facet>
+                                <h:outputText value="#{item.tipoTrans}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Disponible"/>
+                                </f:facet>
+                                <h:outputText value="#{item.disponible}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Totales"/>
+                                </f:facet>
+                                <h:outputText value="#{item.totales}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Rutaid"/>
+                                </f:facet>
+                                <h:outputText value="#{item.rutaid}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Editar"/>
+                                </f:facet>
+                                <p:commandLink action="TransportesCrearEditar" value="Editar" actionListener="#{transportesBean.prepararEditar}" ajax="false"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Eliminar"/>
+                                </f:facet>
+                                <p:commandLink action="TransportesConfirmarEliminar" value="Eliminar" actionListener="#{transportesBean.prepararEliminar}" ajax="false"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </f:view>
+
             </ui:define>
 
         </ui:composition>
