@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./TemplatePrincipal.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <p:panelGrid columns="2">
+                            <h:outputLabel value="NumEconomico:" for="numEconomico" />
+                            <h:inputText id="numEconomico" value="#{transportesBean.transporte.numEconomico}" title="NumEconomico" required="true" requiredMessage="The NumEconomico field is required."/>
+                            <h:outputLabel value="TipoTrans:" for="tipoTrans" />
+                            <h:inputText id="tipoTrans" value="#{transportesBean.transporte.tipoTrans}" title="TipoTrans" required="true" requiredMessage="The TipoTrans field is required."/>
+                            <h:outputLabel value="Disponible:" for="disponible" />
+                            <h:inputText id="disponible" value="#{transportesBean.transporte.disponible}" title="Disponible" required="true" requiredMessage="The Disponible field is required."/>
+                            <h:outputLabel value="Totales:" for="totales" />
+                            <h:inputText id="totales" value="#{transportesBean.transporte.totales}" title="Totales" required="true" requiredMessage="The Totales field is required."/>
+                            <h:outputLabel value="Rutaid:" for="rutaid" />
+                            <h:selectOneMenu id="rutaid" value="#{transportesBean.transporte.rutaid}" title="Rutaid" required="true" requiredMessage="The Rutaid field is required.">
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+
+                        </p:panelGrid>
+                        <p:commandButton action="TransportesConfirmar" value="aceptar" ajax="false"/>
+                        <p:commandButton action="TransportesLista" value="cancelar" immediate="true" ajax="false"/>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
