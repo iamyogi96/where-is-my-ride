@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import modelos.Puntos;
+import modelos.Ruta;
 
 /**
  *
@@ -26,5 +27,7 @@ public class PuntosDao extends AbstractDao<Puntos> implements PuntosDaoLocal {
     public PuntosDao() {
         super(Puntos.class);
     }
+
+    
     
 }

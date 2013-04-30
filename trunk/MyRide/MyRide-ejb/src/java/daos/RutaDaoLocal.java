@@ -28,5 +28,7 @@ public interface RutaDaoLocal {
     List<Ruta> findRange(int[] range);
 
     int count();
+
+    Ruta getRutaPorId(Ruta idRutaG);
     
 }

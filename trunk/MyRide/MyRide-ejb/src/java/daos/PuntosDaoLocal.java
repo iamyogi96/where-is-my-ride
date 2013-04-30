@@ -7,6 +7,7 @@ package daos;
 import java.util.List;
 import javax.ejb.Local;
 import modelos.Puntos;
+import modelos.Ruta;
 
 /**
  *
@@ -28,5 +29,7 @@ public interface PuntosDaoLocal {
     List<Puntos> findRange(int[] range);
 
     int count();
+
+  
     
 }
