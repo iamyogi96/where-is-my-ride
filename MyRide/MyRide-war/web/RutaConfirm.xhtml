@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../TemplatePrincipal.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                content<f:view>
+                    <h:form>
+                        <h1><h:outputText value="View"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputText value="Nombre:"/>
+                            <h:outputText value="#{rutaBean.ruta.nombre}" title="Nombre"/>
+                            <h:outputText value="Descripcion:"/>
+                            <h:outputText value="#{rutaBean.ruta.descripcion}" title="Descripcion"/>
+                            <h:outputText value="NoRuta:"/>
+                            <h:outputText value="#{rutaBean.ruta.noRuta}" title="NoRuta"/>
+                            <h:outputText value="Logotipo:"/>
+                            <h:outputText value="#{rutaBean.ruta.logotipo}" title="Logotipo"/>
+                            <h:outputText value="Telefono:"/>
+                            <h:outputText value="#{rutaBean.ruta.telefono}" title="Telefono"/>
+                            <h:outputText value="NomResponsable:"/>
+                            <h:outputText value="#{rutaBean.ruta.nomResponsable}" title="NomResponsable"/>
+                            <h:commandButton action="#{rutaBean.procesarAccion()}" value="Aceptar"/>
+                            <h:commandButton action="#{rutaBean.procesarRegresar()}" value="Cancelar"/>
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

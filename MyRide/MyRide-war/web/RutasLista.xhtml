@@ -1,14 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
 
     <body>
 
-        <ui:composition template="./PrincipalTemplate.xhtml">
+        <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                A,B,C de las Rutas
+                top
             </ui:define>
 
             <ui:define name="left">
@@ -16,7 +18,70 @@
             </ui:define>
 
             <ui:define name="content">
-                
+
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="List"/></h1>
+                        <h:dataTable value="#{puntosBean.listaRuta}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nombre"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nombre}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Descripcion"/>
+                                </f:facet>
+                                <h:outputText value="#{item.descripcion}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NoRuta"/>
+                                </f:facet>
+                                <h:outputText value="#{item.noRuta}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Logotipo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.logotipo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Telefono"/>
+                                </f:facet>
+                                <h:outputText value="#{item.telefono}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NomResponsable"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nomResponsable}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Modificar"/>
+                                </f:facet>
+                                <h:commandButton action="RutaCrearEditar" value="Editar" actionListener="#{rutaBean.prepararEditar}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Eliminar"/>
+                                </f:facet>
+                                <h:commandButton action="RutaConfirmar" value="Eliminar" actionListener="#{rutaBean.prepararEliminar}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <h:commandButton action="RutaCrearEditar" value="Nuevo Ruta" actionListener="#{rutaBean.prepararNuevoRegistro}"/>
+                    </h:form>
+                </f:view>
+
             </ui:define>
 
         </ui:composition>

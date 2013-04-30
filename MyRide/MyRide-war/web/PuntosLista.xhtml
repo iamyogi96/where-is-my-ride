@@ -15,7 +15,7 @@
 
             <ui:define name="left">
                 <h:form>
-                        <h:commandButton action="PuntosCrearEditar" value="Registrar nuevo punto"/>
+                    <h:commandButton action="PuntosCrearEditar" value="Registrar nuevo punto" actionListener="#{puntosBean.prepararNuevo}"/>
                 </h:form>
             </ui:define>
 
