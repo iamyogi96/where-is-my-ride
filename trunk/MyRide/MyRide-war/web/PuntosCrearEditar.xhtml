@@ -29,12 +29,12 @@
                             <h:outputLabel value="Latitud:" for="latitud" />
                             <h:inputText id="latitud" value="#{puntosBean.puntos.latitud}" title="Latitud" required="true" requiredMessage="The Latitud field is required."/>
                             <h:outputLabel value="IdRuta:" for="idRuta" />
-                            <h:selectOneMenu id="idRuta" value="#{puntosBean.puntos.idRuta}" title="IdRuta" required="true" requiredMessage="The IdRuta field is required.">
+                            <h:selectOneMenu id="idRuta" value="#{puntosBean.idRutaTemp}" title="IdRuta" required="true" requiredMessage="The IdRuta field is required.">
                                 <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{puntosBean.listaRuta}"/>
+                                <f:selectItems value="#{puntosBean.listaRuta}" var="item" itemLabel="#{item.nombre}" itemValue="#{item.id}" />
                             </h:selectOneMenu>
                         </h:panelGrid>
-                        <h:commandButton action="PuntosConfirmar" value="Aceptar"/>
+                        <h:commandButton action="#{puntosBean.aceptar}" value="Aceptar"/>
                         <h:commandButton action="PuntosLista" immediate="true" value="Cancelar"/>
                     </h:form>
                 </f:view>
