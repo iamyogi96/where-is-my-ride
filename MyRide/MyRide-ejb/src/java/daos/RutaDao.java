@@ -26,5 +26,12 @@ public class RutaDao extends AbstractDao<Ruta> implements RutaDaoLocal {
     public RutaDao() {
         super(Ruta.class);
     }
+
+    @Override
+    public Ruta getRutaPorId(Ruta idRutaG) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+   
     
 }
