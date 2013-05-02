@@ -28,12 +28,15 @@ public class UsuarioBean {
     private List<Usuario> lista;
     private Usuario usuario;
     private String accion;
+     
 
     public UsuarioBean() {
         usuario = new Usuario();
     }
     //get y set
 
+   
+    
     public Usuario getUsuario() {
         return usuario;
     }
