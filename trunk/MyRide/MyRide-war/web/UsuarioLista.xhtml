@@ -11,88 +11,104 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                top
+                <center>
+                    <p:graphicImage value="/img/1.jpg  " width="1300" height="100"/>
+                </center>
+                 
+                
+                
+                
             </ui:define>
 
             <ui:define name="left">
-                left
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                    <p:commandButton action="UsuarioCrearEditar" value="Nuevo Usuario" actionListener="#{usuarioBean.prepararNuevoRegistro}" ajax="false"/>
+                </h:form>
+
             </ui:define>
 
             <ui:define name="content">
+                
                 <h1>Lista de usuarios</h1><br/>
                 <f:view>
                     <h:form>
-                        <h1><h:outputText value="List"/></h1>
-                        <h:dataTable value="#{usuarioBean.lista}" var="item">
-                            <h:column>
+                        <h1><h:outputText value="Lista de usuarios"/></h1>
+                        <p:dataTable value="#{usuarioBean.lista}" var="item">
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Id"/>
                                 </f:facet>
                                 <h:outputText value="#{item.id}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Nombre"/>
                                 </f:facet>
                                 <h:outputText value="#{item.nombre}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Apaterno"/>
                                 </f:facet>
                                 <h:outputText value="#{item.apaterno}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Amaterno"/>
                                 </f:facet>
                                 <h:outputText value="#{item.amaterno}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Correo"/>
                                 </f:facet>
                                 <h:outputText value="#{item.correo}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Direccion"/>
                                 </f:facet>
                                 <h:outputText value="#{item.direccion}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Ciudad"/>
                                 </f:facet>
                                 <h:outputText value="#{item.ciudad}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Contrasena"/>
                                 </f:facet>
                                 <h:outputText value="#{item.contrasena}"/>
-                            </h:column>
-                            <h:column>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Telefono"/>
                                 </f:facet>
                                 <h:outputText value="#{item.telefono}"/>
-                            </h:column>
+                            </p:column>
 
-                            <h:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Modificar"/>
                                 </f:facet>
-                                <h:commandButton action="UsuarioCrearEditar" value="Editar" actionListener="#{usuarioBean.prepararEditar}"/>
-                            </h:column>
-                            <h:column>
+                                <center>
+                                    <p:commandButton action="UsuarioCrearEditar" value="Editar" actionListener="#{usuarioBean.prepararEditar}"/>
+                                </center>
+                            </p:column>
+                            <p:column>
                                 <f:facet name="header">
                                     <h:outputText value="Eliminar"/>
                                 </f:facet>
-                                <h:commandButton action="UsuarioConfirmar" value="Eliminar" actionListener="#{usuarioBean.prepararEliminar}"/>
-                            </h:column>
-                        </h:dataTable>
-                        <h:commandButton action="UsuarioCrearEditar" value="Nuevo Usuario" actionListener="#{usuarioBean.prepararNuevoRegistro}"/>
+                                <center>
+                                    <p:commandButton action="UsuarioConfirmar" value="Eliminar" actionListener="#{usuarioBean.prepararEliminar}"/>
+                                </center>
+                            </p:column>
+                        </p:dataTable>
+
                     </h:form>
                 </f:view>
 
