@@ -11,7 +11,9 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                top
+                <center>
+                    <p:graphicImage value="/img/1.jpg  " width="1300" height="100"/>
+                </center>
             </ui:define>
 
             <ui:define name="left">
@@ -19,6 +21,7 @@
             </ui:define>
 
             <ui:define name="content">
+                <p:panel header="Nuevo Usuario">
                 <f:view>
                     <h:form>
                         <h1><h:outputText value="Create/Edit"/></h1>
@@ -36,7 +39,13 @@
                             <h:outputLabel value="Ciudad:" for="ciudad" />
                             <p:inputText id="ciudad" value="#{usuarioBean.usuario.ciudad}" title="Ciudad" required="true" requiredMessage="The Ciudad field is required."/>
                             <h:outputLabel value="Contrasena:" for="contrasena" />
+                           
                             <p:inputText id="contrasena" value="#{usuarioBean.usuario.contrasena}" title="Contrasena" required="true" requiredMessage="The Contrasena field is required."/>
+                            
+                            <br>
+                                 <p:password id="feedback" value="#{contrasenaBean.password1}" feedback="true"/> 
+                            </br>
+                            <br></br>
                             <h:outputLabel value="Telefono:" for="telefono" />
                             <p:inputText id="telefono" value="#{usuarioBean.usuario.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
                             
@@ -49,7 +58,7 @@
                         </h:panelGrid>
                     </h:form>
                 </f:view>
-
+</p:panel>
 
             </ui:define>
 
