@@ -3,11 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
-        <ui:composition template="./../TemplatePrincipal.xhtml">
+        <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
                 top
@@ -18,10 +19,12 @@
             </ui:define>
 
             <ui:define name="content">
-                content<f:view>
+                <f:view>
                     <h:form>
                         <h1><h:outputText value="View"/></h1>
                         <h:panelGrid columns="2">
+                            <h:outputText value="Id:"/>
+                            <h:outputText value="#{rutaBean.ruta.id}" title="Id"/>
                             <h:outputText value="Nombre:"/>
                             <h:outputText value="#{rutaBean.ruta.nombre}" title="Nombre"/>
                             <h:outputText value="Descripcion:"/>
@@ -29,13 +32,13 @@
                             <h:outputText value="NoRuta:"/>
                             <h:outputText value="#{rutaBean.ruta.noRuta}" title="NoRuta"/>
                             <h:outputText value="Logotipo:"/>
-                            <h:outputText value="#{rutaBean.ruta.logotipo}" title="Logotipo"/>
+                            <p:graphicImage value="#{rutaBean.img}" width="30" height="30"/>
                             <h:outputText value="Telefono:"/>
                             <h:outputText value="#{rutaBean.ruta.telefono}" title="Telefono"/>
                             <h:outputText value="NomResponsable:"/>
                             <h:outputText value="#{rutaBean.ruta.nomResponsable}" title="NomResponsable"/>
-                            <h:commandButton action="#{rutaBean.procesarAccion()}" value="Aceptar"/>
-                            <h:commandButton action="#{rutaBean.procesarRegresar()}" value="Cancelar"/>
+                            <h:commandButton action="#{rutaBean.procesarAccion}" value="Aceptar"/>
+                            <h:commandButton action="#{rutaBean.procesarRegresar}" value="Cancelar"/>
                         </h:panelGrid>
                     </h:form>
                 </f:view>
