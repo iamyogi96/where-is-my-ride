@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
@@ -14,7 +15,12 @@
             </ui:define>
 
             <ui:define name="left">
-                left
+               <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                     <p:commandButton action="RutaCrearEditar" value="Nuevo Ruta" actionListener="#{rutaBean.prepararNuevoRegistro}" ajax="false"/>
+                    
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
@@ -78,7 +84,7 @@
                                 <h:commandButton action="RutaConfirmar" value="Eliminar" actionListener="#{rutaBean.prepararEliminar}"/>
                             </h:column>
                         </h:dataTable>
-                        <h:commandButton action="RutaCrearEditar" value="Nuevo Ruta" actionListener="#{rutaBean.prepararNuevoRegistro}"/>
+                       
                     </h:form>
                 </f:view>
 

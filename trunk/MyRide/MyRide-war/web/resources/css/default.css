@@ -14,12 +14,14 @@ h1 {
     margin: 0px;
     padding: 0px;
     color: #D20005;
+    background-color: #3399ff;
 }
 
 a:link, a:visited {
   color: #045491;
   font-weight : bold;
   text-decoration: none;
+    background-color: #3399ff;
 }
 
 a:link:hover, a:visited:hover  {
