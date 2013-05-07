@@ -12,7 +12,7 @@
 
             <ui:define name="top">
                 <center>
-                    <p:graphicImage value="/img/1.jpg  " width="1300" height="100"/>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
                 </center>
                  
                 
@@ -30,11 +30,10 @@
             </ui:define>
 
             <ui:define name="content">
-                
-                <h1>Lista de usuarios</h1><br/>
+                <p:panel header="Lista de usuarios">               
                 <f:view>
                     <h:form>
-                        <h1><h:outputText value="Lista de usuarios"/></h1>
+                      
                         <p:dataTable value="#{usuarioBean.lista}" var="item">
                             <p:column>
                                 <f:facet name="header">
@@ -112,7 +111,7 @@
                     </h:form>
                 </f:view>
 
-
+</p:panel>
 
             </ui:define>
 

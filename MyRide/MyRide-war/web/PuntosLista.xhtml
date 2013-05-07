@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
@@ -15,7 +16,12 @@
 
             <ui:define name="left">
                 <h:form>
-                    <h:commandButton action="PuntosCrearEditar" value="Registrar nuevo punto" actionListener="#{puntosBean.prepararNuevo}"/>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                    <center>
+                        <p:commandButton action="PuntosCrearEditar" value="Nuevo Punto" actionListener="#{puntosBean.prepararNuevo}"/>
+                    </center>
+
                 </h:form>
             </ui:define>
 
@@ -54,14 +60,14 @@
                                 </f:facet>
                                 <h:outputText value="#{item.idRuta}"/>
                             </h:column>
-                            
-                             <h:column>
+
+                            <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Editar"/>
                                 </f:facet>
                                 <h:commandButton action="PuntosCrearEditar" value="Editar" actionListener="#{puntosBean.prepararEditar}"/>
                             </h:column>
-                            
+
                             <h:column>
                                 <f:facet name="header">
                                     <h:outputText value="Eliminar"/>
@@ -69,7 +75,7 @@
                                 <h:commandButton value="Elimiar" action="PuntosConfirmar" actionListener="#{puntosBean.prepararEliminar}"/>
                             </h:column>
 
-                            
+
                         </h:dataTable>
                     </h:form>
                 </f:view>

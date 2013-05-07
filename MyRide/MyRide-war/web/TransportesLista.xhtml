@@ -15,13 +15,17 @@
             </ui:define>
 
             <ui:define name="left">
-                left
+               <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                    <p:commandButton action="TransportesCrearEditar" value="Nuevo Transporte" actionListener="#{transportesBean.prepararNuevo}" ajax="false"/>
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <f:view>
                     <h:form>
-                        <p:commandButton action="TransportesCrearEditar" value="Nuevo Transporte" actionListener="#{transportesBean.prepararNuevo}" ajax="false"/>
+                       
                         <h1><h:outputText value="List"/></h1>
                         <p:dataTable value="#{transportesBean.lista}" var="item">
                             <p:column>
