@@ -2,14 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                top
+                 <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                </center>
             </ui:define>
 
             <ui:define name="left">
@@ -17,12 +20,19 @@
             </ui:define>
 
             <ui:define name="content">
+                <p:panel header="Menu">
                 <h:form>
                     <h1>  <h:commandLink action="RutasLista" value="Rutas"/></h1>
                     <h1>  <h:commandLink action="PuntosLista" value="Puntos"/></h1>
                     <h1><h:commandLink action="TransportesLista" value="Transportes"/></h1>
                     <h1><h:commandLink action="UsuarioLista" value="Usuarios"/></h1>
                 </h:form>
+                </p:panel>
+                <br></br>
+                 <br></br>
+                  <br></br>
+                   <br></br>
+                    <br></br>
             </ui:define>
 
         </ui:composition>
