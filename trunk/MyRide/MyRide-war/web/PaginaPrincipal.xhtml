@@ -11,16 +11,23 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
+                <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
+                    <h:outputText value="¡Bienvenido a Where is my ride?!" style="color:#2E64FE;font-size:36px;" />  
+                </p:notificationBar>  
+
+                
                 <center>
                     <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
                 </center>
+                <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
+                <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
             </ui:define>
 
             <ui:define name="left">
                 <center>
 
                     <p:commandButton action="UsuarioCrearEditar" value="Nuevo Usuario"/>
-                    
+
                 </center>
 
             </ui:define>
@@ -34,22 +41,22 @@
                             <h:outputLabel value="Contrasenia:"/>
                             <h:inputSecret value="#{loginBean.pass}"/>
                         </h:panelGrid>
-                       
+
                         <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false"/>
                         <p:commandButton value="Mapa" action="MapaMobil" ajax="false"/>
                         <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
                     </h:form>
-                 </p:panel>
+                </p:panel>
                 <p:panel header="Objetivo de where is my ride?">
-                <h:form>
-                    <h:panelGrid columns="1">
-                        <center>
-                        Ofrecer a la sociedad una idea exacta de la ubicación, tiempos y capacidad de distintos medios de transporte, por medio de una aplicación móvil que utiliza GPS, brindando a las personas la planificación de su traslado al punto al que se dirige.
-                       </center>
-                    </h:panelGrid>
+                    <h:form>
+                        <h:panelGrid columns="1">
+                            <center>
+                                Ofrecer a la sociedad una idea exacta de la ubicación, tiempos y capacidad de distintos medios de transporte, por medio de una aplicación móvil que utiliza GPS, brindando a las personas la planificación de su traslado al punto al que se dirige.
+                            </center>
+                        </h:panelGrid>
 
-                </h:form>
-</p:panel>
+                    </h:form>
+                </p:panel>
             </ui:define>
 
         </ui:composition>
