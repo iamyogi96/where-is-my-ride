@@ -3,8 +3,11 @@
  * and open the template in the editor.
  */
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 /**
  *
@@ -37,6 +40,10 @@ public class LoginBean {
     public void setPass(String pass) {
         this.pass = pass;
     }
+    
+    public void savePerson(ActionEvent actionEvent) {  
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bienvenido " + user +  "!"));  
+    } 
     
     public String acceso(){
     if(user.equals("admin") && pass.equals("111")){
