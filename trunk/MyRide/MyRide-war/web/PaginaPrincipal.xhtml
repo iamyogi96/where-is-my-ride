@@ -12,19 +12,19 @@
 
             <ui:define name="top">
                 <center>
-                <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
-                     <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
-               
-                   
-                </p:notificationBar>  
-</center>
-                
+                    <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
+                        <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
+
+
+                    </p:notificationBar>  
+                </center>
+
                 <center>
                     <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
                 </center>
                 <center>
-                <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
-                <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
+                    <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
+                    <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
                 </center>
             </ui:define>
 
@@ -40,16 +40,27 @@
             <ui:define name="content">
                 <p:panel header="Acceso">
                     <h:form>
-                        <h:panelGrid columns="2">
-                            <h:outputLabel value="usuario:"/>
-                            <h:inputText value="#{loginBean.user}"/>
-                            <h:outputLabel value="Contrasenia:"/>
-                            <h:inputSecret value="#{loginBean.pass}"/>
+                        <h:panelGrid columns="3">
+                            <h:outputLabel for="usuario" value="usuario: *" />  
+                            <p:inputText id="usuario" value="#{loginBean.user}" required="true" label="usuario">  
+                                <f:validateLength minimum="2" />  
+                            </p:inputText>  
+                            <p:message for="usuario" display="icon"/>  
+
+                            <h:outputLabel for="contrasena" value="Contrasena: *" />                             
+                            <h:inputText id="contrasena" value="#{loginBean.pass}" label="Contrasena" required="true">  
+                                <f:validateLength minimum="2" />  
+                                <p:ajax update="msgSurname" event="keyup" />  
+                            </h:inputText>  
+                            <p:message for="contrasena" id="msgSurname" display="icon"/>  
+
+
                         </h:panelGrid>
 
-                        <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false"/>
+                        <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false" actionListener="#{loginBean.savePerson}"/>
                         <p:commandButton value="Mapa" action="MapaMobil" ajax="false"/>
                         <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
+
                     </h:form>
                 </p:panel>
                 <p:panel header="Objetivo de where is my ride?">
