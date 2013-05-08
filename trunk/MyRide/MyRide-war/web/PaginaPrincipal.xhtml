@@ -10,22 +10,12 @@
 
         <ui:composition template="./TemplatePrincipal.xhtml">
 
-            <ui:define name="top">
+            <ui:define name="top">               
                 <center>
-                    <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
-                        <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
-
-
-                    </p:notificationBar>  
-                </center>
-
-                <center>
-                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
-                </center>
-                <center>
-                    <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
-                    <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
-                </center>
+                    <p:graphicImage value="/img/w3.jpg" width="1400" height="180"/>
+                    <p:graphicImage value="/img/w4.jpg" width="1400" height="150"/>
+                </center> 
+                <br/>
             </ui:define>
 
             <ui:define name="left">
@@ -38,6 +28,17 @@
             </ui:define>
 
             <ui:define name="content">
+                <center>
+                    <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
+                        <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
+
+
+                    </p:notificationBar>  
+                </center>
+                 <center>
+                    <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
+                    <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
+                </center>
                 <p:panel header="Acceso">
                     <h:form>
                         <h:panelGrid columns="3">
