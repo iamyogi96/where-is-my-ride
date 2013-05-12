@@ -64,26 +64,18 @@ public class LoginBean implements Serializable{
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bienvenido " + user +  "!"));  
     } 
     
-    public void acceso(ActionEvent evt){
-        System.out.println("drcfvgbhjnkm,l");
+    public String acceso(){
         String page="";
      for(Usuario usu:usuariosBl.obtenerUsuarios()){
     if(user.equals(usu.getNombre()) && pass.equals(usu.getContrasena())){
-    page= "MenuAdministrador";
-    }
-    else{
-    page= "Error";
+      ///  System.out.println("entrarrrrrr");
+        page = "pm:viewB";
+       // System.out.println("waaaa");
+       
     }
      }
+    
+    return page;
+     
     }
-    
-//    public String entrar(){
-//    if(user.equals(usuario.getNombre()) && pass.equals(usuario.getContrasena())){
-//    return "MenuAdministrador";
-//    }else{
-//    return "PaginaPrincipal";
-//    }
-//    }
-    
-  
 }
