@@ -3,7 +3,9 @@
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
+       
     </context-param>
+   
     <filter>
         <filter-name>PrimeFaces FileUpload Filter</filter-name>
         <filter-class>
@@ -30,6 +32,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/PaginaPrincipal.xhtml</welcome-file>
+        <welcome-file>faces/PrincipalMobil.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
