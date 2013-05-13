@@ -8,6 +8,7 @@ import daos.TransporteDaoLocal;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import modelos.Ruta;
 import modelos.Transporte;
 
 /**
@@ -41,5 +42,12 @@ public class TransporteBl implements TransporteBlLocal {
     public List<Transporte> obtenerTransporte() {
         return transporteDao.findAll();
     }
+
+    @Override
+    public Transporte findById(Integer id) {
+        return transporteDao.find(id);
+        
+    }
+    
 
 }

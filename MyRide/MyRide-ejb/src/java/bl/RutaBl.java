@@ -44,7 +44,7 @@ public class RutaBl implements RutaBlLocal {
     }
 
     @Override
-    public Ruta getRutaPorId(int idRuta) {
+    public Ruta getRutaPorId(Integer idRuta) {
         return rutaDao.find(idRuta);
     }
 

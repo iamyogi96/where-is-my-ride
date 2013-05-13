@@ -6,6 +6,7 @@ package bl;
 
 import java.util.List;
 import javax.ejb.Local;
+import modelos.Ruta;
 import modelos.Transporte;
 
 /**
@@ -22,5 +23,7 @@ public interface TransporteBlLocal {
     void eliminar(Transporte transporte);
 
     List<Transporte> obtenerTransporte();
+
+    Transporte findById(Integer id);
     
 }
