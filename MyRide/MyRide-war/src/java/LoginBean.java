@@ -21,15 +21,14 @@ import modelos.Usuario;
  */
 @ManagedBean
 @SessionScoped
+public class LoginBean implements Serializable {
 
-public class LoginBean implements Serializable{
     @EJB
     private UsuariosBlLocal usuariosBl;
-
     private String user;
     private String pass;
     private Usuario usuario;
-    
+
     /**
      * Creates a new instance of LoginBean
      */
@@ -59,23 +58,20 @@ public class LoginBean implements Serializable{
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    public void savePerson(ActionEvent actionEvent) {  
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bienvenido " + user +  "!"));  
-    } 
-    
-    public String acceso(){
-        String page="";
-     for(Usuario usu:usuariosBl.obtenerUsuarios()){
-    if(user.equals(usu.getNombre()) && pass.equals(usu.getContrasena())){
-      ///  System.out.println("entrarrrrrr");
-        page = "pm:viewB";
-       // System.out.println("waaaa");
-       
+
+    public void savePerson(ActionEvent actionEvent) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bienvenido " + user + "!"));
     }
-     }
-    
-    return page;
-     
+
+    public String acceso() {
+        String page = "";
+        for (Usuario usu : usuariosBl.obtenerUsuarios()) {
+            if (user.equals(usu.getNombre()) && pass.equals(usu.getContrasena())) {
+                ///  System.out.println("entrarrrrrr");
+                page = "pm:viewB";
+             // System.out.println("waaaa");
+            }
+        }
+        return page;
     }
 }

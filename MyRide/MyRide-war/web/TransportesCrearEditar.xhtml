@@ -32,13 +32,13 @@
                             <h:outputLabel value="Totales:" for="totales" />
                             <h:inputText id="totales" value="#{transportesBean.transporte.totales}" title="Totales" required="true" requiredMessage="The Totales field is required."/>
                             <h:outputLabel value="Rutaid:" for="rutaid" />
-                            <h:selectOneMenu id="rutaid" value="#{transportesBean.transporte.rutaid}" title="Rutaid" required="true" requiredMessage="The Rutaid field is required.">
+                            <h:selectOneMenu id="rutaid" value="#{transportesBean.idRutaSeleccionada}" title="Rutaid" required="true" requiredMessage="The Rutaid field is required.">
                                 <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{fixme}"/>
+                                <f:selectItems value="#{transportesBean.listaRuta}" var="item" itemValue="#{item.id}" itemLabel="#{item.noRuta} #{item.nombre}"/>
                             </h:selectOneMenu>
 
                         </p:panelGrid>
-                        <p:commandButton action="TransportesConfirmar" value="aceptar" ajax="false"/>
+                        <p:commandButton action="#{transportesBean.procesarSeleccion}" value="aceptar" ajax="false"/>
                         <p:commandButton action="TransportesLista" value="cancelar" immediate="true" ajax="false"/>
                     </h:form>
                 </f:view>
