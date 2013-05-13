@@ -23,6 +23,6 @@ public interface RutaBlLocal {
 
     List<Ruta> obtenerRuta();
     
-    public Ruta getRutaPorId(int idRuta);
+    public Ruta getRutaPorId(Integer idRuta);
     
 }
