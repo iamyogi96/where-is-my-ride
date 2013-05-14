@@ -8,14 +8,10 @@
 
     <body>
 
-        <ui:composition template="./TemplatePrincipal.xhtml">
+        <ui:composition template="./TemplateLogin.xhtml">
 
             <ui:define name="top">               
-                <center>
-                    <p:graphicImage value="/img/w3.jpg" width="1400" height="180"/>
-                    <p:graphicImage value="/img/w4.jpg" width="1400" height="150"/>
-                </center> 
-                <br/>
+                
             </ui:define>
 
             <ui:define name="left">
@@ -23,7 +19,7 @@
             </ui:define>
 
             <ui:define name="content">
-                <center>
+              <!--  <center>
                     <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
                         <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
 
@@ -34,7 +30,8 @@
                     <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
                     <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
                 </center>
-                <p:panel header="Acceso">
+              -->  <p:panel header="Acceso" >
+                  <center>
                     <h:form>
                         <h:panelGrid columns="3">
                             <h:outputLabel for="usuario" value="usuario: *" />  
@@ -42,22 +39,16 @@
                                 <f:validateLength minimum="2" />  
                             </p:inputText>  
                             <p:message for="usuario" display="icon"/>  
-
                             <h:outputLabel for="contrasena" value="Contrasena: *" />                             
-                            <h:inputText id="contrasena" value="#{loginBean.pass}" label="Contrasena" required="true">  
-                                <f:validateLength minimum="2" />  
-                                <p:ajax update="msgSurname" event="keyup" />  
-                            </h:inputText>  
-                            <p:message for="contrasena" id="msgSurname" display="icon"/>  
-
-
+                            <p:password id="inlineFeedback" value="#{loginBean.pass}" feedback="true" inline="true" promptLabel="Por favor introduce tu password" weakLabel="Devil" goodLabel="Buena!!" strongLabel="Excelente!!" /> 
                         </h:panelGrid>
 
                         <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false" actionListener="#{loginBean.savePerson}"/>
                         <p:commandButton value="Mapa" action="MapaMobil" ajax="false"/>
-                        <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
+
 
                     </h:form>
+                      </center>
                 </p:panel>
                 <p:panel header="Objetivo de where is my ride?">
                     <h:form>
@@ -68,6 +59,7 @@
                         </h:panelGrid>
 
                     </h:form>
+                    
                 </p:panel>
             </ui:define>
 
