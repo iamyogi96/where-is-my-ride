@@ -5,7 +5,6 @@
 package modelos;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,11 +47,11 @@ public class Puntos implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "longitud")
-    private BigDecimal longitud;
+    private double longitud;
     @Basic(optional = false)
     @NotNull
     @Column(name = "latitud")
-    private BigDecimal latitud;
+    private double latitud;
     @JoinColumn(name = "id_ruta", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Ruta idRuta;
@@ -64,7 +63,7 @@ public class Puntos implements Serializable {
         this.id = id;
     }
 
-    public Puntos(Integer id, int noPunto, BigDecimal longitud, BigDecimal latitud) {
+    public Puntos(Integer id, int noPunto, double longitud, double latitud) {
         this.id = id;
         this.noPunto = noPunto;
         this.longitud = longitud;
@@ -87,19 +86,19 @@ public class Puntos implements Serializable {
         this.noPunto = noPunto;
     }
 
-    public BigDecimal getLongitud() {
+    public double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(BigDecimal longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 
-    public BigDecimal getLatitud() {
+    public double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(BigDecimal latitud) {
+    public void setLatitud(double latitud) {
         this.latitud = latitud;
     }
 

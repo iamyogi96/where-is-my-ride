@@ -41,5 +41,9 @@ public class PuntosBl implements PuntosBlLocal {
     public List<Puntos> obtenerPuntos() {
         return puntosDao.findAll();
     }
+    
+     public Puntos findById(int idPunto) {
+          return puntosDao.find(idPunto);
+    }
 
 }
