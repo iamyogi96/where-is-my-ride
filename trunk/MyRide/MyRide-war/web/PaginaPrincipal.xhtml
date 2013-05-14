@@ -10,9 +10,6 @@
 
         <ui:composition template="./TemplateLogin.xhtml">
 
-            <ui:define name="top">               
-                
-            </ui:define>
 
             <ui:define name="left">
                
@@ -45,7 +42,7 @@
                             <p:password id="inlineFeedback" value="#{loginBean.pass}" feedback="true" inline="true" promptLabel="Por favor introduce tu password" weakLabel="Devil" goodLabel="Buena!!" strongLabel="Excelente!!" /> 
                         </h:panelGrid>
 
-                        <p:commandButton value="Aceptar" action="#{loginBean.acceso}" ajax="false" actionListener="#{loginBean.savePerson}"/>
+                        <p:commandButton value="Aceptar" action="#{loginBean.accesoEscritorio}" ajax="false" actionListener="#{loginBean.savePerson}"/>
                         <p:commandButton value="Mobil" action="PrincipalMobil" ajax="false"/>
 
 

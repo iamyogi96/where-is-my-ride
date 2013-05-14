@@ -74,4 +74,15 @@ public class LoginBean implements Serializable {
         }
         return page;
     }
+    public String accesoEscritorio() {
+        String page = "";
+        for (Usuario usu : usuariosBl.obtenerUsuarios()) {
+            if (user.equals(usu.getNombre()) && pass.equals(usu.getContrasena())) {
+                ///  System.out.println("entrarrrrrr");
+                page = "MenuAdministrador";
+             // System.out.println("waaaa");
+            }
+        }
+        return page;
+    }
 }

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pm="http://primefaces.org/mobile"
+        renderKitId="PRIMEFACES_MOBILE" 
+        xmlns:f="http://java.sun.com/jsf/core"
+        contentType="text/html">
+
+    <pm:page title="Transportes">
+
+        <pm:view id="viewA">
+            <pm:header title="Mostrar Ruta" swatch="b">
+                <f:facet name="left">
+                </f:facet>
+            </pm:header>
+            <pm:content>
+                <script src="http://maps.google.com/maps/api/js?sensor=true"
+        type="text/javascript"></script>
+                <p:gmap center="#{rutasMobilBean.centro}" zoom="15" model="#{rutasMobilBean.drawRuta}" type="HYBRID" style="width:100%;height:30em" widgetVar="gmap"/>
+                    <h:form>
+                        <h:commandButton action="RutasMobilLista" value="Regresar"/>
+                    </h:form>
+            </pm:content>
+        </pm:view>
+    </pm:page>
+</f:view>
+
+
