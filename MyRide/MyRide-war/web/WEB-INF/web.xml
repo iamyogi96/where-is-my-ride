@@ -5,7 +5,11 @@
         <param-value>Development</param-value>
        
     </context-param>
-   
+    
+    <context-param>  
+        <param-name>primefaces.THEME</param-name>  
+        <param-value>cupertino</param-value>  
+    </context-param>
     <filter>
         <filter-name>PrimeFaces FileUpload Filter</filter-name>
         <filter-class>
@@ -32,6 +36,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/PrincipalMobil.xhtml</welcome-file>
+        <welcome-file>faces/PaginaPrincipal.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
