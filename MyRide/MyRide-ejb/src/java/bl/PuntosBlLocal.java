@@ -22,5 +22,5 @@ public interface PuntosBlLocal {
     void eliminar(Puntos puntos);
 
     List<Puntos> obtenerPuntos();
-    
+     Puntos findById(int idPunto);
 }

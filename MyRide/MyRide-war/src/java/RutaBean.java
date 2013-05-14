@@ -1,7 +1,5 @@
 
 import bl.RutaBlLocal;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
@@ -12,7 +10,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
-import javax.imageio.ImageIO;
 import modelos.Ruta;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.DefaultStreamedContent;
@@ -148,6 +145,23 @@ public class RutaBean implements Serializable {
         ruta = listaRuta.get(index);
 
     }
+    //// ////
+    //////////////
+    ////////
+    /////
+    public String llamadaCancelarConfirmar(){//rutaconfirmar
+       String link="";
+       if(accion.equalsIgnoreCase("Editar")||accion.equalsIgnoreCase("Nuevo")
+               ){
+           link="RutaCrearEditar";
+           
+       }else{
+           if(accion.equalsIgnoreCase("Eliminar")){
+               link="RutasLista";
+           }
+       }
+      return link;
+   }
     /**
      * Creates a new instance of RutaBean
      */

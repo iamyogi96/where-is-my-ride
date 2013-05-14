@@ -5,15 +5,12 @@
 
 import bl.PuntosBlLocal;
 import bl.RutaBlLocal;
-import java.awt.Color;
-import java.util.List;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 import modelos.Puntos;
-import modelos.Ruta;
 import modelos.Ruta;
 import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
@@ -63,6 +60,7 @@ public class RutasMobilBean {
             Polyline lineas = new Polyline();
             for (Puntos p : puntos) {
                 lineas.getPaths().add(new LatLng(p.getLatitud(), p.getLongitud()));
+                
             }
             centro = lineas.getPaths().get(0).getLat() + "," + lineas.getPaths().get(0).getLng();
             System.out.println(centro);

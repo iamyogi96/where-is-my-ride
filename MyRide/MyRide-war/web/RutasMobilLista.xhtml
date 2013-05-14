@@ -20,14 +20,12 @@
             <pm:content>
                 <f:view>
                     <h:form>
-                        <h:dataTable value="#{transportesBean.lista}" var="item" width="100%">
-                            <h:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Id"/>
-                                </f:facet>
-                                <p:commandButton action="pm:rutas" value="#{item.id}"/>
-                            </h:column>
-                        </h:dataTable>
+                        
+                                <p:commandButton action="pm:rutas" value="Autobus"/>
+                                <p:commandButton action="pm:rutas" value="TrenLigero"/>
+                                <p:commandButton action="pm:rutas" value="Macrobus"/>
+                                <p:commandButton action="pm:rutas" value="Taxis"/>
+                            
                     </h:form>
                 </f:view>
             </pm:content>
