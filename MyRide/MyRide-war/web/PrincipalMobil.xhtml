@@ -1,46 +1,44 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <f:view xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:pm="http://primefaces.org/mobile"
-      renderKitId="PRIMEFACES_MOBILE" 
-      xmlns:f="http://java.sun.com/jsf/core"
-      contentType="text/html">
- 
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pm="http://primefaces.org/mobile"
+        renderKitId="PRIMEFACES_MOBILE" 
+        xmlns:f="http://java.sun.com/jsf/core"
+        contentType="text/html">
+
     <pm:page title="Login">
-        
+
         <pm:view id="viewA">
             <pm:header title="Login" swatch="b"/>
             <pm:content>
                 <h:form >
                     <center>
                         <h:panelGrid columns="3">
+                            <h:outputLabel for="usuario" value="Usuario :"/>
+                            <p:inputText id="usuario" value="#{loginBean.user}" required="true">  
+                                <f:validateLength minimum="2" />  
+                            </p:inputText>  
+                            <p:message for="usuario" display="icon"/>
+                            <h:outputLabel for="cotrasena" value="Contraseña :"/>
+                            <p:password feedback="true" id="contrasena" value="#{loginBean.pass}" required="true">  
+                                <f:validateLength minimum="2" />  
+                                <p:ajax update="msgSurname" event="keyup" />  
+                            </p:password>
+                            <p:message for="contrasena" id="msgSurname" display="icon"/> 
 
-                            <br><p:inputText id="usuario" value="#{loginBean.user}" required="true" label="usuario">  
-                                    <f:validateLength minimum="2" />  
-                                </p:inputText>  
-                                <p:message for="usuario" display="icon"/>
-                            </br>
-
-                            <br>
-                                <p:password feedback="true" id="contrasena" value="#{loginBean.pass}" label="Contrasena" required="true">  
-                                    <f:validateLength minimum="2" />  
-                                    <p:ajax update="msgSurname" event="keyup" />  
-                                </p:password>
-                                <p:message for="contrasena" id="msgSurname" display="icon"/> 
-                            </br> 
                         </h:panelGrid>
                         <p:commandButton value="Entrar" action="#{loginBean.acceso}" />
-                       
+
                     </center>
                 </h:form>
             </pm:content>
         </pm:view>
-   
+
         <pm:view id="viewB" >
-           <pm:header title="Menu">
+            <pm:header title="Menu">
                 <f:facet name="left">
                     <p:button value="Back" icon="back" onclick="history.back()"/>
                 </f:facet>
@@ -48,14 +46,14 @@
             <pm:content>
                 <h:form>
                     <p:panel header="Menu">
-                        <br>  <h:commandLink action="RutasLista" value="Rutas"/></br>
-                        <br>  <h:commandLink action="PuntosLista" value="Puntos"/></br>
-                        <br><h:commandLink action="TransportesLista" value="Transportes"/></br>
-                        <br><h:commandLink action="UsuarioLista" value="Usuarios"/></br>
+                        <h:commandButton action="RutasLista" value="Rutas"/>
+                        <h:commandButton action="PuntosLista" value="Puntos"/>
+                        <h:commandButton action="RutasMobilLista" value="RutasMobilLista"/>
+                        <h:commandButton action="UsuarioLista" value="Usuarios"/>
                     </p:panel>
                 </h:form>
             </pm:content>
         </pm:view>
-        
+
     </pm:page>
 </f:view>
