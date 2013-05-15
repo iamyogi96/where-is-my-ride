@@ -17,14 +17,17 @@
             </ui:define>
 
             <ui:define name="left">
-                left
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <p:panel header="Nuevo Usuario">
                 <f:view>
                     <h:form>
-                        <h1><h:outputText value="Create/Edit"/></h1>
+                        
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Nombre:" for="nombre" />
                             <p:inputText id="nombre" value="#{usuarioBean.usuario.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
