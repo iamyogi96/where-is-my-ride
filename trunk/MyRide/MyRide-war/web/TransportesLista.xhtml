@@ -11,7 +11,9 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                top
+                <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                </center>
             </ui:define>
 
             <ui:define name="left">
@@ -26,7 +28,7 @@
                 <f:view>
                     <h:form>
                        
-                        <h1><h:outputText value="List"/></h1>
+                        <p:panel header="Transportes"></p:panel>
                         <p:dataTable value="#{transportesBean.lista}" var="item">
                             <p:column>
                                 <f:facet name="header">
