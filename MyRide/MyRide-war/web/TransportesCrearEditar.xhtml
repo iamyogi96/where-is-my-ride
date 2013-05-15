@@ -11,17 +11,22 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                top
+                <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                </center>
             </ui:define>
 
             <ui:define name="left">
-                left
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <f:view>
                     <h:form>
-                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <p:panel header="Editar Transportes"></p:panel>
                         <p:panelGrid columns="2">
                             <h:outputLabel value="NumEconomico:" for="numEconomico" />
                             <h:inputText id="numEconomico" value="#{transportesBean.transporte.numEconomico}" title="NumEconomico" required="true" requiredMessage="The NumEconomico field is required."/>
