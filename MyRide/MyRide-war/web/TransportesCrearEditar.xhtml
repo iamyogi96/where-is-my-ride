@@ -28,19 +28,19 @@
                     <h:form>
                         <p:panel header="Editar Transportes"></p:panel>
                         <p:panelGrid columns="2">
-                            <h:outputLabel value="NumEconomico:" for="numEconomico" />
-                            <h:inputText id="numEconomico" value="#{transportesBean.transporte.numEconomico}" title="NumEconomico" required="true" requiredMessage="The NumEconomico field is required."/>
-                            <h:outputLabel value="TipoTrans:" for="tipoTrans" />
-                            <h:inputText id="tipoTrans" value="#{transportesBean.transporte.tipoTrans}" title="TipoTrans" required="true" requiredMessage="The TipoTrans field is required."/>
-                            <h:outputLabel value="Disponible:" for="disponible" />
-                            <h:inputText id="disponible" value="#{transportesBean.transporte.disponible}" title="Disponible" required="true" requiredMessage="The Disponible field is required."/>
-                            <h:outputLabel value="Totales:" for="totales" />
-                            <h:inputText id="totales" value="#{transportesBean.transporte.totales}" title="Totales" required="true" requiredMessage="The Totales field is required."/>
-                            <h:outputLabel value="Rutaid:" for="rutaid" />
-                            <h:selectOneMenu id="rutaid" value="#{transportesBean.idRutaSeleccionada}" title="Rutaid" required="true" requiredMessage="The Rutaid field is required.">
+                            <p:outputLabel value="NumEconomico:" for="numEconomico" />
+                            <p:inputText id="numEconomico" value="#{transportesBean.transporte.numEconomico}" title="NumEconomico" required="true" requiredMessage="The NumEconomico field is required."/>
+                            <p:outputLabel value="TipoTrans:" for="tipoTrans" />
+                            <p:inputText id="tipoTrans" value="#{transportesBean.transporte.tipoTrans}" title="TipoTrans" required="true" requiredMessage="The TipoTrans field is required."/>
+                            <p:outputLabel value="Disponible:" for="disponible" />
+                            <p:inputText id="disponible" value="#{transportesBean.transporte.disponible}" title="Disponible" required="true" requiredMessage="The Disponible field is required."/>
+                            <p:outputLabel value="Totales:" for="totales" />
+                            <p:inputText id="totales" value="#{transportesBean.transporte.totales}" title="Totales" required="true" requiredMessage="The Totales field is required."/>
+                            <p:outputLabel value="Rutaid:" for="rutaid" />
+                            <p:selectOneMenu id="rutaid" value="#{transportesBean.idRutaSeleccionada}" title="Rutaid" required="true" requiredMessage="The Rutaid field is required.">
                                 <!-- TODO: update below reference to list of available items-->
                                 <f:selectItems value="#{transportesBean.listaRuta}" var="item" itemValue="#{item.id}" itemLabel="#{item.noRuta} #{item.nombre}"/>
-                            </h:selectOneMenu>
+                            </p:selectOneMenu>
 
                         </p:panelGrid>
                         <p:commandButton action="#{transportesBean.procesarSeleccion}" value="aceptar" ajax="false"/>
