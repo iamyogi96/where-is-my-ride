@@ -11,36 +11,42 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-               <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                </center>
+
             </ui:define>
 
             <ui:define name="left">
-                left
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <p:panel header="Registrar punto">
-                <f:view>
-                    <h:form>
-                       
-                        <h:panelGrid columns="2">
-                           <h:outputLabel value="NoPunto:" for="noPunto" />
-                            <h:inputText id="noPunto" value="#{puntosBean.puntos.noPunto}" title="NoPunto" required="true" requiredMessage="The NoPunto field is required."/>
-                            <h:outputLabel value="Longitud:" for="longitud" />
-                            <h:inputText id="longitud" value="#{puntosBean.puntos.longitud}" title="Longitud" required="true" requiredMessage="The Longitud field is required."/>
-                            <h:outputLabel value="Latitud:" for="latitud" />
-                            <h:inputText id="latitud" value="#{puntosBean.puntos.latitud}" title="Latitud" required="true" requiredMessage="The Latitud field is required."/>
-                            <h:outputLabel value="IdRuta:" for="idRuta" />
-                            <h:selectOneMenu id="idRuta" value="#{puntosBean.idRutaTemp}" title="IdRuta" required="true" requiredMessage="The IdRuta field is required.">
-                                <!-- TODO: update below reference to list of available items-->
-                                <f:selectItems value="#{puntosBean.listaRuta}" var="item" itemLabel="#{item.nombre}" itemValue="#{item.id}" />
-                            </h:selectOneMenu>
-                        </h:panelGrid>
-                        <p:commandButton action="#{puntosBean.aceptar}" value="Aceptar"/>
-                        <p:commandButton action="PuntosLista" immediate="true" value="Cancelar"/>
-                    </h:form>
-                </f:view>
-</p:panel>
+                    <f:view>
+                        <h:form>
+
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="NoPunto:" for="noPunto" />
+                                <h:inputText id="noPunto" value="#{puntosBean.puntos.noPunto}" title="NoPunto" required="true" requiredMessage="The NoPunto field is required."/>
+                                <h:outputLabel value="Longitud:" for="longitud" />
+                                <h:inputText id="longitud" value="#{puntosBean.puntos.longitud}" title="Longitud" required="true" requiredMessage="The Longitud field is required."/>
+                                <h:outputLabel value="Latitud:" for="latitud" />
+                                <h:inputText id="latitud" value="#{puntosBean.puntos.latitud}" title="Latitud" required="true" requiredMessage="The Latitud field is required."/>
+                                <h:outputLabel value="IdRuta:" for="idRuta" />
+                                <h:selectOneMenu id="idRuta" value="#{puntosBean.idRutaTemp}" title="IdRuta" required="true" requiredMessage="The IdRuta field is required.">
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItems value="#{puntosBean.listaRuta}" var="item" itemLabel="#{item.nombre}" itemValue="#{item.id}" />
+                                </h:selectOneMenu>
+                            </h:panelGrid>
+                            <p:commandButton action="#{puntosBean.aceptar}" value="Aceptar"/>
+                            <p:commandButton action="PuntosLista" immediate="true" value="Cancelar"/>
+                        </h:form>
+                    </f:view>
+                </p:panel>
             </ui:define>
 
         </ui:composition>
