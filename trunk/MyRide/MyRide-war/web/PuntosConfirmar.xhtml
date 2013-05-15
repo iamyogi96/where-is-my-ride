@@ -11,19 +11,25 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-              <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                </center>
             </ui:define>
 
             <ui:define name="left">
-                left
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <f:view>
                     <h:form>
-                        <h1><h:outputText value="View"/></h1>
+                        <p:panel header="Confirmar Punto">
                         <h:panelGrid columns="2">
-                           <h:outputText value="NoPunto:"/>
+                            <h:outputText value="NoPunto:"/>
                             <h:outputText value="#{puntosBean.puntos.noPunto}" title="NoPunto"/>
                             <h:outputText value="Longitud:"/>
                             <h:outputText value="#{puntosBean.puntos.longitud}" title="Longitud"/>
@@ -32,8 +38,9 @@
                             <h:outputText value="IdRuta:"/>
                             <h:outputText value="#{puntosBean.puntos.idRuta}" title="IdRuta"/>
                         </h:panelGrid>
-                         <h:commandButton action="PuntosCrearEditar" immediate="true" value="Cancelar"/>
-                         <h:commandButton action="#{puntosBean.processarAccion}" value="Confirmar"/>
+                            </p:panel>
+                        <h:commandButton action="PuntosCrearEditar" immediate="true" value="Cancelar"/>
+                        <h:commandButton action="#{puntosBean.processarAccion}" value="Confirmar"/>
                     </h:form>
                 </f:view>
 
