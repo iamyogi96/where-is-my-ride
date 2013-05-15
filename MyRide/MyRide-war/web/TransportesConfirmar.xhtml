@@ -11,17 +11,22 @@
         <ui:composition template="./TemplatePrincipal.xhtml">
 
             <ui:define name="top">
-                top
+                <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/>
+                </center>
             </ui:define>
 
             <ui:define name="left">
-                left
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                </h:form>
             </ui:define>
 
             <ui:define name="content">
                 <f:view>
                     <h:form>
-                        <h1><h:outputText value="View"/></h1>
+                        <p:panel header="Confirmar Transporte"></p:panel>
                         <p:panelGrid columns="2">
                             <h:outputText value="Id:"/>
                             <h:outputText value="#{transportesBean.transporte.id}" title="Id"/>
