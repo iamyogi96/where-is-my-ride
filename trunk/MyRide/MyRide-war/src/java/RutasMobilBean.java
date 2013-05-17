@@ -55,7 +55,7 @@ public class RutasMobilBean {
 
     public void seleccionarRuta(ActionEvent evt) {
         ruta = listaRuta.get(Integer.parseInt(evt.getComponent().getClientId().split(":")[2]));
-        List<Puntos> puntos = puntosBl.obtenerPuntos();
+        List<Puntos> puntos = puntosBl.obtenerPuntosPorRuta(ruta);
         if (!puntos.isEmpty()) {
             Polyline lineas = new Polyline();
             for (Puntos p : puntos) {
