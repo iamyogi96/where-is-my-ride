@@ -9,6 +9,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import modelos.Puntos;
+import modelos.Ruta;
 
 /**
  *
@@ -42,8 +43,16 @@ public class PuntosBl implements PuntosBlLocal {
         return puntosDao.findAll();
     }
     
+    @Override
      public Puntos findById(int idPunto) {
           return puntosDao.find(idPunto);
     }
+
+    @Override
+    public List<Puntos> obtenerPuntosPorRuta(Ruta ruta) {
+        return puntosDao.findByRuta(ruta);
+    }
+    
+    
 
 }

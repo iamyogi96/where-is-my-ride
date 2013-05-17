@@ -31,7 +31,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Puntos.findById", query = "SELECT p FROM Puntos p WHERE p.id = :id"),
     @NamedQuery(name = "Puntos.findByNoPunto", query = "SELECT p FROM Puntos p WHERE p.noPunto = :noPunto"),
     @NamedQuery(name = "Puntos.findByLongitud", query = "SELECT p FROM Puntos p WHERE p.longitud = :longitud"),
-    @NamedQuery(name = "Puntos.findByLatitud", query = "SELECT p FROM Puntos p WHERE p.latitud = :latitud")})
+    @NamedQuery(name = "Puntos.findByLatitud", query = "SELECT p FROM Puntos p WHERE p.latitud = :latitud"),
+    @NamedQuery(name = "Puntos.findByRuta", query = "SELECT p FROM Puntos p WHERE p.idRuta.id = :idRuta")})
 public class Puntos implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
