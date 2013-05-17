@@ -7,6 +7,7 @@ package bl;
 import java.util.List;
 import javax.ejb.Local;
 import modelos.Puntos;
+import modelos.Ruta;
 
 /**
  *
@@ -23,4 +24,6 @@ public interface PuntosBlLocal {
 
     List<Puntos> obtenerPuntos();
      Puntos findById(int idPunto);
+
+    List<Puntos> obtenerPuntosPorRuta(Ruta ruta);
 }

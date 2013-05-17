@@ -30,6 +30,8 @@ public interface PuntosDaoLocal {
 
     int count();
 
+    List<Puntos> findByRuta(Ruta ruta);
+
   
     
 }
