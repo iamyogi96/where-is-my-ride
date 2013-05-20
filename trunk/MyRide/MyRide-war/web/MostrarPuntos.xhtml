@@ -19,8 +19,9 @@
             <pm:content>
                 <script src="http://maps.google.com/maps/api/js?sensor=true"
         type="text/javascript"></script>
-                <p:gmap center="#{rutasMobilBean.centro}" zoom="15" model="#{rutasMobilBean.drawRuta}" type="HYBRID" style="width:100%;height:30em" widgetVar="gmap"/>
-                    <h:form>
+                <h:form>
+                    <p:gmap id="mapa" center="#{rutasMobilBean.centro}" zoom="15" model="#{rutasMobilBean.drawRuta}" type="HYBRID" style="width:100%;height:30em" widgetVar="gmap"/>
+                    <p:poll interval="3" listener="#{rutasMobilBean.actualizarCamion}" update="mapa" />
                         <h:commandButton action="RutasMobilLista" value="Regresar"/>
                     </h:form>
             </pm:content>
