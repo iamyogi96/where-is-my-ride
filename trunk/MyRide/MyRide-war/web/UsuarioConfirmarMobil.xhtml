@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pm="http://primefaces.org/mobile"
+        renderKitId="PRIMEFACES_MOBILE" 
+        xmlns:f="http://java.sun.com/jsf/core"
+        contentType="text/html">
+
+    <pm:page title="Nuevo Usuarios">
+        <pm:view id="viewA">
+            <pm:header title="Confirmar nuevo usuario" swatch="b"/>
+            <pm:content>
+                <h:form >
+                    <centrer>
+                        <h:panelGrid columns="2">
+
+                            <h:outputText value="Nombre:"/>
+                            <h:outputText value="#{usuarioBean.usuario.nombre}" title="Nombre"/>
+                            <h:outputText value="Apaterno:"/>
+                            <h:outputText value="#{usuarioBean.usuario.apaterno}" title="Apaterno"/>
+                            <h:outputText value="Amaterno:"/>
+                            <h:outputText value="#{usuarioBean.usuario.amaterno}" title="Amaterno"/>
+                            <h:outputText value="Correo:"/>
+                            <h:outputText value="#{usuarioBean.usuario.correo}" title="Correo"/>
+                            <h:outputText value="Direccion:"/>
+                            <h:outputText value="#{usuarioBean.usuario.direccion}" title="Direccion"/>
+                            <h:outputText value="Ciudad:"/>
+                            <h:outputText value="#{usuarioBean.usuario.ciudad}" title="Ciudad"/>
+                            <h:outputText value="Contrasena:"/>
+                            <h:outputText value="#{usuarioBean.usuario.contrasena}" title="Contrasena"/>
+                            <h:outputText value="Telefono:"/>
+                            <h:outputText value="#{usuarioBean.usuario.telefono}" title="Telefono"/>
+                            <p:commandButton action="" actionListener="#{usuarioBean.procesarAccion}" value="Aceptar"/>
+                            <p:commandButton action="UsuarioMobil" value="Cancelar"/>
+
+
+
+
+                        </h:panelGrid>
+                    </centrer>
+                </h:form>
+            </pm:content>
+        </pm:view>
+
+    </pm:page>
+
+
+</f:view>
+
