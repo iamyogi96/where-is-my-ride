@@ -12,44 +12,44 @@
 
 
             <ui:define name="left">
-               
+
             </ui:define>
 
             <ui:define name="content">
-              <!--  <center>
-                    <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
-                        <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
-
-
-                    </p:notificationBar>  
-                </center>
-                 <center>
-                    <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
-                    <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
-                </center>
-              -->  
-              <center>
-                  <p:panel header="Acceso" >
-                  
-                    <h:form>
-                        <h:panelGrid columns="3">
-                            <h:outputLabel for="usuario" value="usuario: *" />  
-                            <p:inputText id="usuario" value="#{loginBean.user}" required="true" label="usuario">  
-                               
-                            </p:inputText>  
-                            <p:message for="usuario" display="icon"/>  
-                            <h:outputLabel for="contrasena" value="Contrasena: *" />                             
-                            <p:password id="inlineFeedback" value="#{loginBean.pass}" feedback="true" inline="true" promptLabel="Por favor introduce tu password" weakLabel="Devil" goodLabel="Buena!!" strongLabel="Excelente!!" /> 
-                        </h:panelGrid>
-
-                        <p:commandButton value="Aceptar" action="#{loginBean.accesoEscritorio}" ajax="false" actionListener="#{loginBean.savePerson}"/>
-                        <p:commandButton value="Mobil" action="PrincipalMobil" ajax="false"/>
-
-
-                    </h:form>
-                      
-                </p:panel>
+                <!--  <center>
+                      <p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
+                          <h:outputText value="Bienvenido a Where is my ride!" style="color:#045FB4;font-size:36px;" />  
+  
+  
+                      </p:notificationBar>  
                   </center>
+                   <center>
+                      <p:commandButton value="Mostrar" onclick="bar.show()" type="button" />  
+                      <p:commandButton value="Ocultar" onclick="bar.hide()" type="button" />  
+                  </center>
+                -->  
+                
+                    <p:panel header="Acceso" >
+
+                        <h:form>
+                            <center>
+                            <h:panelGrid columns="3">
+                                <h:outputLabel for="usuario" value="usuario: *" />  
+                                <p:inputText id="usuario" value="#{loginBean.user}" required="true" label="usuario">  
+                                    <f:validateLength minimum="0" />  
+                                </p:inputText>  
+                                <p:message for="usuario" display="icon"/>  
+                                <h:outputLabel for="contrasena" value="Contrasena: *" />                             
+                                <p:password id="inlineFeedback" value="#{loginBean.pass}" feedback="true" inline="true" promptLabel="Por favor introduce tu password" weakLabel="Devil" goodLabel="Buena!!" strongLabel="Excelente!!" /> 
+                            </h:panelGrid>
+                             
+                            <p:commandButton value="Aceptar" action="#{loginBean.accesoEscritorio}" ajax="false" actionListener="#{loginBean.savePerson}" id="withIcon" update="panel,display" icon="ui-icon-disk"   />
+                            <p:commandButton value="Mobil" action="PrincipalMobil" ajax="false"/>
+</center>
+
+</h:form>
+                        </p:panel>
+                   
                 <p:panel header="Objetivo de where is my ride?">
                     <h:form>
                         <h:panelGrid columns="1">
@@ -59,7 +59,7 @@
                         </h:panelGrid>
 
                     </h:form>
-                    
+
                 </p:panel>
             </ui:define>
 
