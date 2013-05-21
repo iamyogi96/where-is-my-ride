@@ -13,10 +13,10 @@
         <pm:view id="viewA">
             <pm:header title="Confirmar nuevo usuario" swatch="b"/>
             <pm:content>
-                <h:form >
-                    <centrer>
-                        <h:panelGrid columns="2">
-
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value=""/></h1>
+                        <h:panelGrid columns="2">                            
                             <h:outputText value="Nombre:"/>
                             <h:outputText value="#{usuarioBean.usuario.nombre}" title="Nombre"/>
                             <h:outputText value="Apaterno:"/>
@@ -33,15 +33,12 @@
                             <h:outputText value="#{usuarioBean.usuario.contrasena}" title="Contrasena"/>
                             <h:outputText value="Telefono:"/>
                             <h:outputText value="#{usuarioBean.usuario.telefono}" title="Telefono"/>
-                            <p:commandButton action="" actionListener="#{usuarioBean.procesarAccion}" value="Aceptar"/>
-                            <p:commandButton action="UsuarioMobil" value="Cancelar"/>
-
-
-
-
                         </h:panelGrid>
-                    </centrer>
-                </h:form>
+                        <p:commandButton  action="#{usuarioBean.procesarAccionMobil}" value="Aceptar"/>
+                        <p:commandButton action="UsuarioMobil" value="Cancelar"/>
+                    </h:form>
+                </f:view>
+
             </pm:content>
         </pm:view>
 
