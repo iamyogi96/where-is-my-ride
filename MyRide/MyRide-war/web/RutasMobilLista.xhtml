@@ -10,7 +10,20 @@
         contentType="text/html">
 
     <pm:page title="Transportes">
-
+        <style>
+            .fg{
+                background-image: url(img/camion.png);
+                    background-repeat: no-repeat;
+                   
+                    height: 30px;
+                    width: 30px;
+                    resize: horizontal;
+            }
+        </style>
+        
+      
+        
+        
         <pm:view id="viewA">
             <pm:header title="Transportes y Rutas" swatch="b">
                 <f:facet name="left">
@@ -21,10 +34,28 @@
                 <f:view>
                     <h:form>
                         
-                                <p:commandButton action="pm:rutas" value="Autobus"/>
-                                <p:commandButton action="pm:rutas" value="TrenLigero"/>
-                                <p:commandButton action="pm:rutas" value="Macrobus"/>
-                                <p:commandButton action="pm:rutas" value="Taxis"/>
+                        <p:commandButton action="pm:rutas" value="Autobus">
+                           <center>
+                            <h:graphicImage value="img/camion.png"/>
+                            </center>
+                        </p:commandButton>
+                        
+                        <p:commandButton action="pm:rutas" value="TrenLigero">
+                            <center>
+                            <h:graphicImage value="img/tren.png"/>
+                            </center>
+                        </p:commandButton>
+                        
+                        <p:commandButton action="pm:rutas" value="Macrobus">
+                            <center>
+                            <h:graphicImage value="img/macrobus.png"/>
+                            </center>
+                        </p:commandButton>
+                        <p:commandButton action="pm:rutas" value="Taxis">
+                            <center>
+                            <h:graphicImage value="img/taxi.png"/>
+                            </center>
+                        </p:commandButton>
                             
                     </h:form>
                 </f:view>
