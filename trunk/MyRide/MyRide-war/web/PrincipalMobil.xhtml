@@ -19,18 +19,20 @@
                         <h:panelGrid columns="3">
                             <h:outputLabel for="usuario" value="Usuario :"/>
                             <p:inputText id="usuario" value="#{loginBean.user}" required="true">  
-                                <f:validateLength minimum="2" />  
+                                <f:validateLength minimum="0" />  
                             </p:inputText>  
                             <p:message for="usuario" display="icon"/>
                             <h:outputLabel for="cotrasena" value="Contraseña :"/>
                             <p:password feedback="true" id="contrasena" value="#{loginBean.pass}" required="true">  
-                                <f:validateLength minimum="2" />  
+                                <f:validateLength minimum="0" />  
                                 <p:ajax update="msgSurname" event="keyup" />  
                             </p:password>
                             <p:message for="contrasena" id="msgSurname" display="icon"/> 
 
                         </h:panelGrid>
                         <p:commandButton value="Entrar" action="#{loginBean.acceso}" />
+                        <p:commandButton value="Registrate" action="UsuarioMobil"  actionListener="#{usuarioBean.prepararNuevoRegistro}"/>
+
 
                     </center>
                 </h:form>
