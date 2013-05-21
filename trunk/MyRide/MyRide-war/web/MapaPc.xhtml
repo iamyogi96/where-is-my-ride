@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./TemplatePrincipal.xhtml">
+
+            <ui:define name="top">
+                <center>
+                    <p:graphicImage value="/img/w3.jpg  " width="1200" height="130"/><br/>
+                </center>
+            </ui:define>
+
+            <ui:define name="left">
+                <h:form>
+                    <h1>  <p:commandLink action="MenuAdministrador" value="Menu Principal"/></h1>
+                    <br></br>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+                  <script src="http://maps.google.com/maps/api/js?sensor=true"
+        type="text/javascript"></script>
+                    <p:gmap center="41.381542, 2.122893" zoom="15" type="HYBRID" style="width:100%;height:15em" widgetVar="gmap"/>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
