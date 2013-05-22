@@ -66,7 +66,7 @@ public class LoginBean implements Serializable {
     public String acceso() {
         String page = "";
         for (Usuario usu : usuariosBl.obtenerUsuarios()) {
-            if (user.equals(usu.getNombre()) && pass.equals(usu.getContrasena())) {
+            if (user.equalsIgnoreCase(usu.getNombre()) && pass.equalsIgnoreCase(usu.getContrasena())) {
                 ///  System.out.println("entrarrrrrr");
                 page = "pm:viewB";
              // System.out.println("waaaa");
@@ -77,7 +77,7 @@ public class LoginBean implements Serializable {
     public String accesoEscritorio() {
         String page = "";
         for (Usuario usu : usuariosBl.obtenerUsuarios()) {
-            if (user.equals(usu.getNombre()) && pass.equals(usu.getContrasena())) {
+            if (user.equalsIgnoreCase(usu.getNombre()) && pass.equalsIgnoreCase(usu.getContrasena())) {
                 ///  System.out.println("entrarrrrrr");
                 page = "MenuAdministrador";
              // System.out.println("waaaa");
