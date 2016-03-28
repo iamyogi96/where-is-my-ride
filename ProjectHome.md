@@ -1,0 +1,1 @@
+Sistema desarrollado para ubicar el transporte publico de acuerdo a las necesidades del usuario ya que cuenta con la localización del transporte en tiempo real.
